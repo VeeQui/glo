@@ -3,12 +3,12 @@ import { Configuration } from '@nuxt/types';
 const config: Configuration = {
   target: 'static',
   ssr: false,
+  router: { base: '/glo/' },
   head: {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   generate: {
     fallback: true,

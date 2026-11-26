@@ -277,7 +277,7 @@ export default class Header extends Vue {
 
   openPseudoglossa() {
     //window.location.href = 'http://pseudo.gloglossa.gr'
-    window.location.href = '/?pseudo'
+    window.location.href = './?pseudo'
   }
 
   openFileUpload() {

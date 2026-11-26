@@ -499,7 +499,6 @@ export default class InterpreterPage extends Vue {
     await new Promise(resolve => {
       setTimeout(resolve, 100);
     })
-
     let localInputFile = store.inputFile;
 
     if(localInputFile) {
@@ -533,13 +532,13 @@ export default class InterpreterPage extends Vue {
               const indexOfFirstNewLine = localInputFile.indexOf('\n');
 
               if(indexOfFirstNewLine === -1) {
-                return Promise.resolve('');
+                return Promise.resolve({ reading: '' });
               }
 
               const line = localInputFile.substring(0, indexOfFirstNewLine);
               this.consoleNewLine(line, 'read');
               localInputFile = localInputFile.substring(indexOfFirstNewLine + 1)
-              return Promise.resolve(line);
+              return Promise.resolve({ reading: line });
             }
           },
           write: (...data) => {
